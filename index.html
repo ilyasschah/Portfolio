@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Your Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
   </head>
@@ -22,6 +24,10 @@
   <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>ABOUT</p>
+  </a>
+  <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-code w3-xxlarge"></i>
+    <p>PROJECTS</p>
   </a>
   <a href="#experience" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-briefcase w3-xxlarge"></i>
@@ -41,6 +47,7 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#home" onclick="closeNav()">HOME</a>
   <a href="#about" onclick="closeNav()">ABOUT</a>
+  <a href="#projects" onclick="closeNav()">PROJECTS</a>
   <a href="#experience" onclick="closeNav()">EXPERIENCE</a>
   <a href="#contact" onclick="closeNav()">CONTACT</a>
 </div>
@@ -49,13 +56,13 @@
 <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <img src="avatar.jpg" alt="Ilyass Chah" class="profile-avatar">
+    <img src="avatar.jpg" alt="Ilyass Chah" class="profile-avatar" data-aos="zoom-in">
     <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Ilyass Chah.</h1>
-    <p>IT Technician | DevOps & Cloud Enthusiast</p>
+    <p><span id="typewriter" class="typewriter"></span></p>
   </header>
 
   <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about" data-aos="fade-up">
     <h2 class="w3-text-light-grey">About Me</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>
@@ -63,30 +70,72 @@
     </p>
     
     <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-    <p class="w3-wide">Server Administration (Windows, Linux, GCP, Azure)</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:90%"></div>
-    </div>
-    <p class="w3-wide">ERP Administration (Odoo)</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
-    </div>
-    <p class="w3-wide">Automation (Ansible)</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
-    </div>
-    <p class="w3-wide">Languages (C#, Java, Python, SQL)</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    <div class="skills-container">
+      <p class="w3-wide">Server Administration (Windows, Linux, GCP, Azure)</p>
+      <div class="w3-white skill-bar">
+        <div class="w3-dark-grey skill-bar-fill" style="--skill-level: 90%;"></div>
+      </div>
+      <p class="w3-wide">ERP Administration (Odoo)</p>
+      <div class="w3-white skill-bar">
+        <div class="w3-dark-grey skill-bar-fill" style="--skill-level: 95%;"></div>
+      </div>
+      <p class="w3-wide">Automation (Ansible)</p>
+      <div class="w3-white skill-bar">
+        <div class="w3-dark-grey skill-bar-fill" style="--skill-level: 75%;"></div>
+      </div>
+      <p class="w3-wide">Languages (C#, Java, Python, SQL)</p>
+      <div class="w3-white skill-bar">
+        <div class="w3-dark-grey skill-bar-fill" style="--skill-level: 80%;"></div>
+      </div>
     </div><br>
-
+    
+    <h3 class="w3-padding-16 w3-text-light-grey">Technologies & Tools</h3>
+    <div class="tech-icons" data-aos="fade-up">
+        <i class="devicon-azure-plain tech-icon" title="Azure"></i>
+        <i class="devicon-googlecloud-plain tech-icon" title="Google Cloud"></i>
+        <i class="devicon-docker-plain tech-icon" title="Docker"></i>
+        <i class="devicon-ansible-plain tech-icon" title="Ansible"></i>
+        <i class="devicon-csharp-plain tech-icon" title="C#"></i>
+        <i class="devicon-python-plain tech-icon" title="Python"></i>
+        <i class="devicon-postgresql-plain tech-icon" title="PostgreSQL"></i>
+        <i class="devicon-git-plain tech-icon" title="Git"></i>
+    </div>
+    <br><br>
     <button class="w3-button w3-light-grey w3-padding-large w3-section" onclick="window.open('https://drive.google.com/uc?export=download&id=1ub_RCUPlG1cf8P9zOt5AnjLSmmMU9ANV','_blank')">
       <i class="fa fa-download"></i> Download Resume
     </button>
   </div>
+  
+  <!-- Projects Section -->
+  <div class="w3-padding-64 w3-content" id="projects">
+    <h2 class="w3-text-light-grey" data-aos="fade-up">My Projects</h2>
+    <hr style="width:200px" class="w3-opacity" data-aos="fade-up">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <!-- Project 1 -->
+      <div class="w3-half" data-aos="fade-up">
+        <div class="project-card">
+          <img src="https://placehold.co/600x400/2a2a2a/ffffff?text=Project+1" alt="Project 1" style="width:100%">
+          <div class="w3-container w3-white">
+            <h4><b>Automated Deployment Pipeline</b></h4>
+            <p>Designed and implemented a CI/CD pipeline using Azure DevOps to automate the deployment of a .NET web application, reducing deployment time by 50%.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="w3-half" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card">
+          <img src="https://placehold.co/600x400/2a2a2a/ffffff?text=Project+2" alt="Project 2" style="width:100%">
+          <div class="w3-container w3-white">
+            <h4><b>Odoo ERP Customization</b></h4>
+            <p>Customized the Odoo ERP system for a client, developing new modules for inventory management and integrating it with their existing logistics API.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Experience Section -->
-  <div class="w3-padding-64 w3-content" id="experience">
+  <div class="w3-padding-64 w3-content" id="experience" data-aos="fade-up">
     <h2 class="w3-text-light-grey">My Experience</h2>
     <hr style="width:200px" class="w3-opacity">
 
@@ -110,7 +159,7 @@
   </div>
   
   <!-- Education Section -->
-  <div class="w3-padding-64 w3-content">
+  <div class="w3-padding-64 w3-content" data-aos="fade-up">
     <h2 class="w3-text-light-grey">My Education</h2>
     <hr style="width:200px" class="w3-opacity">
 
@@ -134,23 +183,23 @@
   </div>
 
   <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact" data-aos="fade-up">
     <h2 class="w3-text-light-grey">Contact Me</h2>
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
       <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Casablanca, Morocco</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +212 669-097409</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +212 655-081264</p>
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: ilyasschah18@gmail.com</p>
       <p><i class="fa fa-linkedin fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> LinkedIn: <a href="https://www.linkedin.com/in/ilyass-chah-717409301/" target="_blank" class="w3-hover-text-white">linkedin.com/in/ilyass_chah</a></p>
     </div><br>
     <p>Let's get in touch. Send me a message:</p>
 
-    <form action="/action_page.php" target="_blank">
+    <form action="https://formspree.io/f/your_form_id" method="POST">
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p><textarea class="w3-input w3-padding-16" placeholder="Message" required name="Message"></textarea></p>
       <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
@@ -161,23 +210,14 @@
   
 <!-- Footer -->
 <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-  <p>Let's get in touch. Send me a message:</p>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
+  <a href="https://www.linkedin.com/in/ilyass-chah-717409301/" target="_blank" class="w3-hover-opacity"><i class="fa fa-linkedin"></i></a>
 </footer>
 
 <!-- END PAGE CONTENT -->
 </div>
 
-<!-- Your Custom Script -->
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="script.js"></script>
 
 </body>
