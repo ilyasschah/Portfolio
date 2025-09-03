@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // --- Typewriter effect for the header ---
   const typewriterElement = document.getElementById('typewriter');
-  const roles = ["IT Technician", "DevOps Enthusiast", "Cloud Specialist"];
+  const roles = ["DevOps & .NET Developer", "Cloud & Microservices Engineer", "POS System Builder"];
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;

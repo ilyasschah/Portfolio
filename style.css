@@ -62,7 +62,15 @@ body, h1, h2, h3, h4, h5, h6 {
 .skill-bar-fill.animated {
   width: var(--skill-level);
 }
+/* Bullet skill list */
+.skills-list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
 
+.skills-list li {
+  margin-bottom: 8px;
+}
 
 /* Technologies & Tools section */
 .tech-icons {
